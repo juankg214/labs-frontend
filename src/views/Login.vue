@@ -76,7 +76,8 @@
                         alert( "Error en la autenticación" );
                     }else{
                         localStorage.setItem( 'token', response.data.access_token );
-                        alert( "¡Autenticación Exitosa! El token se ha almacenado en el Local Storage" )
+                        /* Cambia el path hacia Home, esto configurado en router.js */
+                        this.$router.push({ path: 'principal' }); 
                     }
                 } ).catch( error => {
                     if( error.response.status === 400 ){
